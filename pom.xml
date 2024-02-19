@@ -45,4 +45,12 @@
         <commons-lang3.version>3.12.0</commons-lang3.version>
         <lombok.version>1.18.26</lombok.version>
     </properties>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub saman-core Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/saman-core/common</url>
+        </repository>
+    </distributionManagement>
 </project>
