@@ -1,7 +1,7 @@
 package io.samancore.common.bean.jaxrs;
 
-import javax.ws.rs.BadRequestException;
-import javax.ws.rs.ext.ParamConverter;
+import jakarta.ws.rs.BadRequestException;
+import jakarta.ws.rs.ext.ParamConverter;
 import java.text.ParseException;
 import java.util.Date;
 
