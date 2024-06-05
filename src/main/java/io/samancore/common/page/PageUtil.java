@@ -59,13 +59,13 @@ public class PageUtil {
     }
 
     public static <ENTITY> Uni<PageData<ENTITY>> combineToPageData(Uni<List<ENTITY>> list, Uni<Long> total) {
-        return list.onItem()
-                .transformToUni(entityList ->
-                        total.onItem()
-                            .transform(count ->
-                                    PageData.<ENTITY>newBuilder()
-                                        .setData(entityList)
-                                        .setCount(count)
-                                        .build()));
+        return Uni.combine().all().unis(list, total).asTuple()
+                .onItem().transform(tuple -> {
+                    var anyList = tuple.getItem1();
+                    return PageData.<ENTITY>newBuilder()
+                            .setData(anyList)
+                            .setCount(tuple.getItem2())
+                            .build();
+                });
     }
 }
