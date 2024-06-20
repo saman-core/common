@@ -4,9 +4,9 @@ import io.samancore.common.transformer.Masker;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Named;
 
-@Named("showLast4")
+@Named("sensitiveDataMask")
 @ApplicationScoped
-public class MaskerShowLastFourImpl implements Masker {
+public class MaskerSensitiveDataMaskImpl implements Masker {
     @Override
     public String apply(String value) {
         return value.replaceAll(".(?=....)", "*");
