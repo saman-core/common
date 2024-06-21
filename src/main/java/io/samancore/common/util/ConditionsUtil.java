@@ -29,7 +29,7 @@ public class ConditionsUtil {
     }
 
     public static Map<String, Object> getModelMapUpdatedWithConditions(Map<String, Object> modelMap, List<Condition> conditions) {
-        var validateError = conditions.stream().filter(condition -> condition.getConditionType().equals(ConditionType.VALIDATE) && condition.getValue() != null && StringUtil.isNullOrEmpty(condition.getValue().toString())).toList();
+        var validateError = conditions.stream().filter(condition -> condition.getConditionType().equals(ConditionType.VALIDATE) && condition.getValue() != null && !StringUtil.isNullOrEmpty(condition.getValue().toString())).toList();
         if (!validateError.isEmpty()) {
             var allProperties = validateError.stream().map(condition -> condition.getValue().toString()).collect(Collectors.joining(","));
             throw new BusinessException(BusinessExceptionsEnum.CONDITION_VALIDATE_ERROR, List.of(allProperties));
