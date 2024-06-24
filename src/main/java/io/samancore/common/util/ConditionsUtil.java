@@ -40,7 +40,7 @@ public class ConditionsUtil {
 
     public static ConditionRequest getConditionRequest(Map<String, Object> modelMap) {
         return ConditionRequest.newBuilder()
-                .setIsInitial(true)
+                .setEvalAll(true)
                 .setVariables(modelMap)
                 .setWithoutPresentation(true)
                 .build();
