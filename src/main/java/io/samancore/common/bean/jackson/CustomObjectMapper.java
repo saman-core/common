@@ -5,9 +5,10 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 
 import java.text.SimpleDateFormat;
 
-public class CustomObjectMapper {
+import static io.samancore.common.SerializationConstant.DATE_PATTERN;
 
-    private static final SimpleDateFormat DATE_FORMAT_FORMIO = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssX");
+public class CustomObjectMapper {
+    private static final SimpleDateFormat DATE_FORMAT_FORMIO = new SimpleDateFormat(DATE_PATTERN);
 
     private CustomObjectMapper() {
     }

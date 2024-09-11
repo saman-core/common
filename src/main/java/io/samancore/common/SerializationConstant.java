@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.TimeZone;
 
 public class SerializationConstant {
-    public static final String DATE_PATTERN = "yyyy-MM-dd'T'HH:mm:ss.SSSZ";
+    public static final String DATE_PATTERN = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
     public static final TimeZone DEFAULT_TIMEZONE;
     public static final DateFormat DATE_FORMAT_ISO8601;
 
