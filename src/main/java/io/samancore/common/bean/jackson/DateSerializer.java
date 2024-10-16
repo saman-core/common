@@ -14,7 +14,7 @@ public class DateSerializer extends StdSerializer<Date> {
         this(null);
     }
 
-    public DateSerializer(Class t) {
+    public DateSerializer(Class<Date> t) {
         super(t);
     }
 
